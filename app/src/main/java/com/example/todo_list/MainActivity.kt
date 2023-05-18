@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val eventsList = ArrayList<Event>()
         for (i in 1..20) {
             eventsList.add(Event("Событие №$i"))
+            //привет
         }
         val adapter = EventsAdapter(eventsList)
         events.adapter = adapter
