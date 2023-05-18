@@ -21,6 +21,5 @@ class MainActivity : AppCompatActivity() {
         val adapter = EventsAdapter(eventsList)
         events.adapter = adapter
         events.layoutManager = LinearLayoutManager(this)
-        //ахахахахахахахахахаххахахахахаахахахах
     }
 }
