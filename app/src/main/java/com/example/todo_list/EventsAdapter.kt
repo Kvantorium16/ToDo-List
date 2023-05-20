@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 class EventsAdapter(val eventsList : List<Event>) : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameCheckBox = itemView.findViewById<CheckBox>(R.id.itemCheckBox)
-        val eventButton = itemView.findViewById<Button>(R.id.itemButton)
+        val nameCheckBox: CheckBox = itemView.findViewById(R.id.itemCheckBox)
+        val eventButton: Button = itemView.findViewById(R.id.itemButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

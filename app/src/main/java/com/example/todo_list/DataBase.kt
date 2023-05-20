@@ -27,11 +27,11 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     //  Функция добавления новой записи в базу данных
     fun addTask(name: String, description: String, dateAdd: String? = null, dateAcc: String, status: Boolean) {
         // Автоподстановка текущего времени в значение dateAdd
-        val dateAdd = dateAdd ?: SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Calendar.getInstance().time)
+        val dateAdd1 = dateAdd ?: SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Calendar.getInstance().time)
         val values = ContentValues().apply {
             put("name", name)
             put("description", description)
-            put("dateAdd", dateAdd)
+            put("dateAdd", dateAdd1)
             put("dateAcc", dateAcc)
             put("status", status)
         }
