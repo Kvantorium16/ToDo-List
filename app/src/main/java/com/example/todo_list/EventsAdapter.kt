@@ -33,7 +33,5 @@ class EventsAdapter(val eventsList : List<Event>) : RecyclerView.Adapter<EventsA
         val eventCheckBox = holder.nameCheckBox
         eventCheckBox.text = (event.name)
         val Zametka = holder.Zametka
-        Zametka.text = "bd"
-
     }
 }

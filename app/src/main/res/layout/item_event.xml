@@ -8,7 +8,7 @@
         android:layout_width="313dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="Название заметки" />
 
     <CheckBox
         android:id="@+id/itemCheckBox"
