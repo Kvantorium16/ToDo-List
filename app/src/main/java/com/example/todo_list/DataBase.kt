@@ -37,6 +37,29 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         }
         val db = writableDatabase
         db.insert("Tasks", null, values)
-        //db.close()
     }
+
+    fun getTaskById(id: Int): Task? {
+        val db = readableDatabase
+        val projection = arrayOf("id", "name", "description", "dateAdd", "dateAcc", "status")
+        val selection = "id = ?"
+        val selectionArgs = arrayOf(id.toString())
+        val cursor = db.query("Tasks", projection, selection, selectionArgs, null, null, null)
+        var task: Task? = null
+        with(cursor) {
+            if (moveToNext()) {
+                val taskId = getInt(getColumnIndexOrThrow("id"))
+                val taskName = getString(getColumnIndexOrThrow("name"))
+                val taskDescription = getString(getColumnIndexOrThrow("description"))
+                val taskDateAdd = getString(getColumnIndexOrThrow("dateAdd"))
+                val taskDateAcc = getString(getColumnIndexOrThrow("dateAcc"))
+                val taskStatus = getInt(getColumnIndexOrThrow("status")) == 1
+                task = Task(taskId, taskName, taskDescription, taskDateAdd, taskDateAcc, taskStatus)
+            }
+        }
+        cursor.close()
+        return task
+    }
+
+    class Task(val id: Int, val name: String, val description: String, val dateAdd: String, val dateAcc: String, val status: Boolean)
 }

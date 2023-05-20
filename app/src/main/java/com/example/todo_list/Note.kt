@@ -47,15 +47,16 @@ class Note : AppCompatActivity() {
             val descriptor = dateEditText2.text.toString()
             val name = dateEditText3.text.toString()
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
+            db.close()
             finish()
         }
 
-        val button2 = findViewById<Button>(R.id.button2)
+        val button2 = findViewById<Button>(R.id.button3)
         button2.setOnClickListener {
             db.execSQL("CREATE TABLE Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
         }
 
-        val button1 = findViewById<Button>(R.id.button3)
+        val button1 = findViewById<Button>(R.id.button2)
         button1.setOnClickListener {
             db.execSQL("DROP TABLE Tasks")
         }
