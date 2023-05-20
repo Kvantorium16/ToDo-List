@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Locale
 
 class Note : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +45,9 @@ class Note : AppCompatActivity() {
             val descriptor = dateEditText2.text.toString()
             val name = dateEditText3.text.toString()
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
-            db.close()
             finish()
+            super.onResume()
+            db.close()
         }
 
         val button2 = findViewById<Button>(R.id.button3)
