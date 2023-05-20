@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class Note : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +24,9 @@ class Note : AppCompatActivity() {
         // Установить слушатель нажатия для EditText
         dateEditText.setOnClickListener {
             // Создать DatePickerDialog для выбора даты
-            val datePickerDialog = DatePickerDialog(
-                this,
-                { _, year, monthOfYear, dayOfMonth ->
+            val datePickerDialog = DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
                     // Получить выбранную дату и установить ее в EditText
-                    val selectedDate = "$dayOfMonth-${monthOfYear+1}-$year"
+                    val selectedDate = String.format("%02d-%02d-%d", dayOfMonth, monthOfYear+1, year)
                     dateEditText.setText(selectedDate)
                 },
                 // Установить текущую дату как начальную дату в DatePickerDialog
