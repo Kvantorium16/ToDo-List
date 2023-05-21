@@ -61,5 +61,12 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         return task
     }
 
+    fun deleteTaskById(id: Int) {    val db = writableDatabase
+        val selection = "id = ?"
+        val selectionArgs = arrayOf(id.toString())
+        db.delete("Tasks", selection, selectionArgs)
+        db.close()
+    }
+
     class Task(val id: Int, val name: String, val description: String, val dateAdd: String, val dateAcc: String, val status: Boolean)
 }

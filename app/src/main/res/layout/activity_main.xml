@@ -22,7 +22,7 @@
     <Switch
         android:id="@+id/Active"
         android:layout_width="50dp"
-        android:layout_height="21dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="227dp"
         android:layout_marginBottom="24dp"
@@ -36,7 +36,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="Активные"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Active"
         app:layout_constraintStart_toStartOf="@+id/Active"
         app:layout_constraintTop_toBottomOf="@+id/Active" />

@@ -17,7 +17,7 @@ class Note : AppCompatActivity() {
         val db = myDatabase.writableDatabase
 
         // Получить ссылку на EditText, который будет использоваться для выбора даты
-        val dateEditText = findViewById<EditText>(R.id.editTextText2)
+        val dateEditText = findViewById<EditText>(R.id.editTextDate)
 
         // Установить слушатель нажатия для EditText
         dateEditText.setOnClickListener {
@@ -36,17 +36,25 @@ class Note : AppCompatActivity() {
             // Показать DatePickerDialog
             datePickerDialog.show()
         }
+
         val dateEditText2 = findViewById<EditText>(R.id.editTextText3)
         val dateEditText3 = findViewById<EditText>(R.id.editTextText)
         val button = findViewById<Button>(R.id.button)
+        val but1 = findViewById<Button>(R.id.button5)
         // Вызываем функцию addTask, передавая ей необходимые параметры
         button.setOnClickListener {
             val dateAcc = dateEditText.text.toString()
             val descriptor = dateEditText2.text.toString()
             val name = dateEditText3.text.toString()
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
-            finish()
             super.onResume()
+            finish()
+            db.close()
+        }
+
+        but1.setOnClickListener {
+            super.onResume()
+            finish()
             db.close()
         }
 

@@ -8,4 +8,8 @@
     <string name="EditText3">Описание задачи</string>
     <string name="EditText2">Дата выполнения</string>
     <string name="EditText">Название задачи</string>
+    <string name="button5">+</string>
+    <string name="buttonZam">Создать новую заметку</string>
+    <string name="EditText1">Название заметки</string>
+    <string name="EditTexT">Описание заметки</string>
 </resources>
