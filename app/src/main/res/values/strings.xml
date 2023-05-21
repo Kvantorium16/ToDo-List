@@ -12,4 +12,12 @@
     <string name="buttonZam">Создать новую заметку</string>
     <string name="EditText1">Название заметки</string>
     <string name="EditTexT">Описание заметки</string>
+    <string name="but5">+</string>
+    <string name="TextView">Активные</string>
+    <string name="TextView1">Заметка</string>
+    <string name="TextView2">Выполнено</string>
+    <string name="name">Name</string>
+    <string name="name1">Name</string>
+    <string name="name2">Name</string>
+    <string name="editTextDatre">Дата выполнения</string>
 </resources>

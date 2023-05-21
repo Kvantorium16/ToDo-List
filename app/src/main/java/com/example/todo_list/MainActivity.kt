@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         val events = findViewById<View>(R.id.mainList) as RecyclerView
         val eventsList = ArrayList<Event>()
         for (i in 1..count) {
-            eventsList.add(Event("Событие №$i"))
+            //eventsList.add(Event(1,"Событие №$i"))
+            eventsList.add(Event(""))
         }
         val adapter = EventsAdapter(eventsList)
         events.adapter = adapter
