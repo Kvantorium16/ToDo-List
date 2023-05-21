@@ -2,6 +2,7 @@ package com.example.todo_list
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import java.text.SimpleDateFormat
@@ -9,6 +10,8 @@ import java.util.Calendar
 import java.util.Locale
 
 class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    val TABLE_NAME = "Tasks" // добавляем название таблицы в переменную
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
     }
@@ -59,6 +62,13 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         }
         cursor.close()
         return task
+    }
+
+    fun getCount(): Int {
+        val db = readableDatabase
+        val count = DatabaseUtils.queryNumEntries(db, TABLE_NAME)
+        db.close()
+        return count.toInt()
     }
 
     fun deleteTaskById(id: Int) {    val db = writableDatabase

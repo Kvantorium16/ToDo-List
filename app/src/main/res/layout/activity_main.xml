@@ -44,16 +44,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Active" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="500dp"
-        android:text="Переход на страницу"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/button5"
         android:layout_width="50dp"
         android:layout_height="50dp"

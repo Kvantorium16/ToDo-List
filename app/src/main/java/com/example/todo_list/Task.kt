@@ -10,7 +10,9 @@ class Task : AppCompatActivity() {
         setContentView(R.layout.activity_task)
 
         val db = DataBase(this)
-        val task = db.getTaskById(1)
+        val position = intent.getIntExtra("position", -1) // получаем порядковый номер элемента
+        val task = db.getTaskById(position + 1) // получаем данные из базы данных
+
         val editText4 = findViewById<EditText>(R.id.editTextText4)
         val editText5 = findViewById<EditText>(R.id.editTextText5)
         val editText6 = findViewById<EditText>(R.id.editTextText6)
