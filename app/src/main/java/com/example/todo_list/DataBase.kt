@@ -71,7 +71,8 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         return count.toInt()
     }
 
-    fun deleteTaskById(id: Int) {    val db = writableDatabase
+    fun deleteTaskById(id: Int) {
+        val db = writableDatabase
         val selection = "id = ?"
         val selectionArgs = arrayOf(id.toString())
         db.delete("Tasks", selection, selectionArgs)
