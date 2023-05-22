@@ -25,7 +25,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="227dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="15dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"

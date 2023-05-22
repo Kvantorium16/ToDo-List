@@ -48,14 +48,14 @@ class Note : AppCompatActivity() {
             val name = dateEditText3.text.toString()
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
             super.onResume()
-            finish()
             db.close()
+            finish()
         }
 
         but1.setOnClickListener {
             super.onResume()
-            finish()
             db.close()
+            finish()
         }
 
         val button2 = findViewById<Button>(R.id.button3)
