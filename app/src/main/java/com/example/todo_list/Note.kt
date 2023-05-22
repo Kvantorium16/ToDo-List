@@ -60,12 +60,12 @@ class Note : AppCompatActivity() {
 
         val button2 = findViewById<Button>(R.id.button3)
         button2.setOnClickListener {
-            db.execSQL("CREATE TABLE Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
         }
 
         val button1 = findViewById<Button>(R.id.button2)
         button1.setOnClickListener {
-            db.execSQL("DROP TABLE Tasks")
+            db.execSQL("DROP TABLE IF EXISTS Tasks")
         }
     }
 }
