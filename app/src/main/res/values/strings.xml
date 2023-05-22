@@ -2,4 +2,22 @@
     <string name="app_name">ToDo-List</string>
     <string name="buttonDefault">Надпись по умолчанию</string>
     <string name="checkBoxDefault">Пустой пункт</string>
+    <string name="button3">Удалить таблицу</string>
+    <string name="button2">Создать новую таблицу</string>
+    <string name="button">Добавить заметку</string>
+    <string name="EditText3">Описание задачи</string>
+    <string name="EditText2">Дата выполнения</string>
+    <string name="EditText">Название задачи</string>
+    <string name="button5">+</string>
+    <string name="buttonZam">Создать новую заметку</string>
+    <string name="EditText1">Название заметки</string>
+    <string name="EditTexT">Описание заметки</string>
+    <string name="but5">+</string>
+    <string name="TextView">Активные</string>
+    <string name="TextView1">Заметка</string>
+    <string name="TextView2">Выполнено</string>
+    <string name="name">Name</string>
+    <string name="name1">Name</string>
+    <string name="name2">Name</string>
+    <string name="editTextDatre">Дата выполнения</string>
 </resources>
