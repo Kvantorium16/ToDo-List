@@ -1,6 +1,6 @@
 package com.example.todo_list
 
-import android.icu.number.Precision.integer
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,18 +14,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val db = DataBase(this)
+        val count = db.getCount()
+
         // Инициализируем список под названием events типа RecycleView, заполняя его с помощью адаптера EventsAdapter
         val events = findViewById<View>(R.id.mainList) as RecyclerView
         val eventsList = ArrayList<Event>()
-        /*var plus = findViewById<Button>(R.id.Plus)
-        var repeat = 0
-        plus.setOnClickListener{repeat++} //пытался сделать чтоб по кнопке добавлялось больше элементов ( не работает)*/
-        for (i in 1.. 20) {
+        for (i in 1..count) {
+            //eventsList.add(Event(1,"Событие №$i"))
             eventsList.add(Event(""))
         }
         val adapter = EventsAdapter(eventsList)
         events.adapter = adapter
         events.layoutManager = LinearLayoutManager(this)
+
+        val but1 = findViewById<Button>(R.id.button5)
+        but1.setOnClickListener {
+            val intent = Intent(this, Note::class.java)
+            startActivity(intent)
+        }
     }
 }
 
