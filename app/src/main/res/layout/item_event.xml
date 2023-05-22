@@ -8,8 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_weight="1"
-        android:width="100dp"
-        android:text="@string/buttonDefault" />
+        android:text="Название заметки" />
 
     <CheckBox
         android:id="@+id/itemCheckBox"
