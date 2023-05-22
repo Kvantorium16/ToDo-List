@@ -55,7 +55,7 @@ class Note : AppCompatActivity() {
         but1.setOnClickListener {
             super.onResume()
             db.close()
-            finish()
+            onPause()
         }
 
         val button2 = findViewById<Button>(R.id.button3)
