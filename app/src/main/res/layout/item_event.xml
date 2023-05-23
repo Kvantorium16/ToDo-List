@@ -5,16 +5,30 @@
 
     <Button
         android:id="@+id/itemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
         android:layout_weight="1"
-        android:width="100dp"
-        android:text="@string/buttonDefault" />
+        android:text="Название заметки" />
 
     <CheckBox
         android:id="@+id/itemCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/checkBoxDefault" />
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_weight="0" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#d11010"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 </LinearLayout>
