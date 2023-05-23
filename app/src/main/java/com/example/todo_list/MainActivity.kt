@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val db = DataBase(this)
+        db.initialize()
 
         // Инициализируем список под названием events типа RecycleView, заполняя его с помощью адаптера EventsAdapter
         val events = findViewById<View>(R.id.mainList) as RecyclerView
@@ -26,6 +27,16 @@ class MainActivity : AppCompatActivity() {
         but1.setOnClickListener {
             val intent = Intent(this, Note::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val newTaskAdded = intent.getBooleanExtra("newTaskAdded", false)
+        if (newTaskAdded) {
+            val events = findViewById<View>(R.id.mainList) as RecyclerView
+            val adapter = events.adapter as EventsAdapter
+            adapter.notifyDataSetChanged()
         }
     }
 }
