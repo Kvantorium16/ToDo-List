@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 // Специальный адаптер, который заполняет RecycleView элементами по схеме item_event.xml
@@ -28,14 +27,13 @@ class EventsAdapter(val db : DataBase) : RecyclerView.Adapter<EventsAdapter.View
     override fun onBindViewHolder(holder: EventsAdapter.ViewHolder, position: Int) {
         val task = db.getTaskById(position)
         val eventCheckBox = holder.nameCheckBox
-        if (task != null) eventCheckBox.text = (task.name)
+        if (task != null) eventCheckBox.text = ("")
         val button = holder.eventButton
-        button.text = "Не нажимать"
+        button.text = task?.name
         button.setOnClickListener {
             val intent = Intent(holder.itemView.context, Task::class.java)
             intent.putExtra("position", position) // передаем порядковый номер элемента
-            holder.itemView.context.startActivity(intent, null)
-        }
+            holder.itemView.context.startActivity(intent, null)}
 
         val butt = holder.but1
         butt.setOnClickListener{

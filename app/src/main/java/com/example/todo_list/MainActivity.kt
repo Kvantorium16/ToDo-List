@@ -1,10 +1,10 @@
 package com.example.todo_list
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Note::class.java)
             startActivity(intent)
         }
+        val but2 = findViewById<Button>(R.id.refresh)
+        but2.setOnClickListener{recreate();}
     }
 }
 

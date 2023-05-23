@@ -1,10 +1,10 @@
 package com.example.todo_list
 
 import android.app.DatePickerDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
 
 class Note : AppCompatActivity() {
@@ -49,6 +49,7 @@ class Note : AppCompatActivity() {
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
             super.onResume()
             db.close()
+            this.recreate();
             finish()
         }
 
