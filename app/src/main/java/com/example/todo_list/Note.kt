@@ -40,7 +40,7 @@ class Note : AppCompatActivity() {
         val dateEditText2 = findViewById<EditText>(R.id.editTextText3)
         val dateEditText3 = findViewById<EditText>(R.id.editTextText)
 
-        val button = findViewById<Button>(R.id.button)
+        val button = findViewById<Button>(R.id.buttonCreate)
         // Вызываем функцию addTask, передавая ей необходимые параметры
         button.setOnClickListener {
             val dateAcc = dateEditText.text.toString()
@@ -52,10 +52,11 @@ class Note : AppCompatActivity() {
             finish()
         }
 
-        val but1 = findViewById<Button>(R.id.button5)
+        val but1 = findViewById<Button>(R.id.buttonClose)
         but1.setOnClickListener {
             super.onResume()
             db.close()
+            finish()//добавил закрытие layout
             onPause()
         }
     }
