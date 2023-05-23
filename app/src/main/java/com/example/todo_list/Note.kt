@@ -1,7 +1,6 @@
 package com.example.todo_list
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -58,10 +57,7 @@ class Note : AppCompatActivity() {
             val descriptor = dateEditText2.text.toString()
             val name = dateEditText3.text.toString()
             myDatabase.addTask(name = name , description = descriptor , dateAcc = dateAcc, status = true/*статус еще не готов*/)
-
-            // Создать объект намерения для передачи данных обратно в activity_main
-            val intent = Intent()
-            intent.putExtra("newTaskAdded", true)
+            super.onResume()
             db.close()
             finish()
         }
@@ -70,7 +66,7 @@ class Note : AppCompatActivity() {
         but1.setOnClickListener {
             super.onResume()
             db.close()
-            onPause()
+            onBackPressed()
         }
     }
 }

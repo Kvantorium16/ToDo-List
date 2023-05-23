@@ -32,12 +32,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val newTaskAdded = intent.getBooleanExtra("newTaskAdded", false)
-        if (newTaskAdded) {
-            val events = findViewById<View>(R.id.mainList) as RecyclerView
-            val adapter = events.adapter as EventsAdapter
-            adapter.notifyDataSetChanged()
-        }
+        val events = findViewById<View>(R.id.mainList) as RecyclerView
+        val adapter = events.adapter as EventsAdapter
+        adapter.notifyDataSetChanged()
     }
 }
 
