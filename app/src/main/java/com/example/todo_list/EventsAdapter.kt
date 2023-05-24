@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 // Специальный адаптер, который заполняет RecycleView элементами по схеме item_event.xml
@@ -40,6 +39,7 @@ class EventsAdapter(val db : DataBase) : RecyclerView.Adapter<EventsAdapter.View
         val butt = holder.but1
         butt.setOnClickListener{
             db.deleteTaskById(position + 1)
+            notifyDataSetChanged()
         }
     }
 }
