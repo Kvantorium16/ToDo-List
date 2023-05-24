@@ -2,6 +2,7 @@ package com.example.todo_list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 
 class Task : AppCompatActivity() {
@@ -20,5 +21,28 @@ class Task : AppCompatActivity() {
         editText4.setText(task?.name)
         editText5.setText(task?.dateAcc)
         editText6.setText(task?.description)
+
+
+        val buttonCloseTask = findViewById<Button>(R.id.buttonCloseTask)
+        buttonCloseTask.setOnClickListener {
+            super.onResume()
+            finish()
+        }
+       val buttonEdit = findViewById<Button>(R.id.buttonEdit)
+        buttonEdit.setOnClickListener {
+            db.deleteTaskById(position + 1)
+            val dateAcc = editText5.text.toString()
+            val descriptor = editText6.text.toString()
+            val name = editText4.text.toString()
+            db.addTask(
+                name = name,
+                description = descriptor,
+                dateAcc = dateAcc,
+                status = true/*статус еще не готов*/
+            )
+            super.onResume()
+            db.close()
+            finish()
+        }
     }
 }

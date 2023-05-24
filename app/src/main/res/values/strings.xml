@@ -22,4 +22,5 @@
     <string name="editTextDatre">Дата выполнения</string>
     <string name="close">Закрыть</string>
     <string name="complete">Выполнено</string>
+    <string name="edit">Изменить</string>
 </resources>
