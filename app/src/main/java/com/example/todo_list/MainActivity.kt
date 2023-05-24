@@ -23,10 +23,23 @@ class MainActivity : AppCompatActivity() {
         events.adapter = adapter
         events.layoutManager = LinearLayoutManager(this)
 
+        val p2 = findViewById<Button>(R.id.button6)
+        val myNotification = Notification(this)
+        myNotification.createNotificationChannel("channel_id_example_01")
+        p2.setOnClickListener {
+            myNotification.sendNotification("channel_id_example_01", 101)
+        }
+
         val but1 = findViewById<Button>(R.id.button5)
         but1.setOnClickListener {
             val intent = Intent(this, Note::class.java)
             startActivity(intent)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        val events = findViewById<View>(R.id.mainList) as RecyclerView
+        val adapter = events.adapter as EventsAdapter
+        adapter.notifyDataSetChanged()
     }
 }
