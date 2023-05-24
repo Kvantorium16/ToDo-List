@@ -13,10 +13,10 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
     val TABLE_NAME = "Tasks" // добавляем название таблицы в переменную
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
+        db.execSQL("CREATE TABLE IF NOT EXISTS Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
     }
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("DROP TABLE Tasks")
+        db.execSQL("DROP TABLE IF EXISTS Tasks")
         onCreate(db)
     }
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -25,6 +25,16 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     companion object {
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "FeedReader.db"
+    }
+
+    // Убеждаемся, что нужная таблица существует в базе данных
+    fun initialize() {
+        val db = writableDatabase
+        val c = db.rawQuery("SELECT DISTINCT tbl_name FROM sqlite_master WHERE tbl_name = 'Tasks'", null)
+        if (c == null) { onCreate(db) }
+        else if (c.count == 0) { onCreate(db) }
+        c.close()
+        db.close()
     }
 
     //  Функция добавления новой записи в базу данных
