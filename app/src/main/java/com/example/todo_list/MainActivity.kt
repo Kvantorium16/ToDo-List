@@ -15,16 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val db = DataBase(this)
-        val count = db.getCount()
+        db.initialize()
 
         // Инициализируем список под названием events типа RecycleView, заполняя его с помощью адаптера EventsAdapter
         val events = findViewById<View>(R.id.mainList) as RecyclerView
-        val eventsList = ArrayList<Event>()
-        for (i in 1..count) {
-            //eventsList.add(Event(1,"Событие №$i"))
-            eventsList.add(Event(""))
-        }
-        val adapter = EventsAdapter(eventsList)
+        val adapter = EventsAdapter(db)
         events.adapter = adapter
         events.layoutManager = LinearLayoutManager(this)
 
@@ -35,4 +30,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-

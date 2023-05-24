@@ -39,8 +39,8 @@ class Note : AppCompatActivity() {
 
         val dateEditText2 = findViewById<EditText>(R.id.editTextText3)
         val dateEditText3 = findViewById<EditText>(R.id.editTextText)
-        val button = findViewById<Button>(R.id.button)
-        val but1 = findViewById<Button>(R.id.button5)
+
+        val button = findViewById<Button>(R.id.buttonCreate)
         // Вызываем функцию addTask, передавая ей необходимые параметры
         button.setOnClickListener {
             val dateAcc = dateEditText.text.toString()
@@ -52,20 +52,12 @@ class Note : AppCompatActivity() {
             finish()
         }
 
+        val but1 = findViewById<Button>(R.id.buttonClose)
         but1.setOnClickListener {
             super.onResume()
             db.close()
+            finish()//добавил закрытие layout
             onPause()
-        }
-
-        val button2 = findViewById<Button>(R.id.button3)
-        button2.setOnClickListener {
-            db.execSQL("CREATE TABLE IF NOT EXISTS Tasks (id INTEGER PRIMARY KEY, name TEXT, description TEXT, dateAdd TEXT, dateAcc TEXT, status BOOLEAN)")
-        }
-
-        val button1 = findViewById<Button>(R.id.button2)
-        button1.setOnClickListener {
-            db.execSQL("DROP TABLE IF EXISTS Tasks")
         }
     }
 }
