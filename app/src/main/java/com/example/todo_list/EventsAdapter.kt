@@ -24,9 +24,12 @@ class EventsAdapter(val db : DataBase) : RecyclerView.Adapter<EventsAdapter.View
         return db.getCount()
     }
     override fun onBindViewHolder(holder: EventsAdapter.ViewHolder, position: Int) {
-        val task = db.getTaskById(position)
+        val task = db.getTaskById(position + 1)
+        val eventCheckBox = holder.nameCheckBox
+        if (task != null) eventCheckBox.text = ("")
         val button = holder.eventButton
-        button.text = "Не нажимать"
+        //if (button == null){button.text = "Название заметки"} else { button.text = task?.name}
+        button.text = task?.name
         button.setOnClickListener {
             val intent = Intent(holder.itemView.context, Task::class.java)
             intent.putExtra("position", position) // передаем порядковый номер элемента

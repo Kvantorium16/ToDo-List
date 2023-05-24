@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <Button
         android:id="@+id/itemButton"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_weight="1"
-        android:text="Название заметки" />
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/red" />
 
     <CheckBox
         android:id="@+id/itemCheckBox"
@@ -18,17 +18,19 @@
 
     <Button
         android:id="@+id/button5"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="5dp"
-        android:backgroundTint="#d11010"
+        android:backgroundTint="@color/yellow"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
         android:insetBottom="0dp"
         android:text="@string/but5"
         android:textAlignment="center"
+        android:textColor="@color/red"
         android:textSize="20sp" />
 </LinearLayout>
