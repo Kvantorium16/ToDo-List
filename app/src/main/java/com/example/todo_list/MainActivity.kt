@@ -36,4 +36,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    override fun onResume() {
+        super.onResume()
+        val events = findViewById<View>(R.id.mainList) as RecyclerView
+        val adapter = events.adapter as EventsAdapter
+        adapter.notifyDataSetChanged()
+    }
 }
