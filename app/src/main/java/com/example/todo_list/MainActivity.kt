@@ -28,7 +28,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Note::class.java)
             startActivity(intent)
         }
-        val but2 = findViewById<Button>(R.id.refresh)
-        but2.setOnClickListener{recreate();}
     }
 }
