@@ -20,4 +20,6 @@
     <string name="name1">Name</string>
     <string name="name2">Name</string>
     <string name="editTextDatre">Дата выполнения</string>
+    <string name="close">Закрыть</string>
+    <string name="complete">Выполнено</string>
 </resources>
