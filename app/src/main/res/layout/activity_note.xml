@@ -47,12 +47,6 @@
             android:minHeight="48dp"
             tools:ignore="LabelFor,TextFields" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/complete" />
-
         <EditText
             android:id="@+id/editTextText3"
             android:layout_width="match_parent"
@@ -77,7 +71,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
         tools:ignore="NotSibling">
 
         <Button
@@ -85,19 +78,19 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="195dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#656565"
+            android:backgroundTint="@color/purple"
             android:text="@string/close"
             android:textAlignment="center"
-            android:textColor="#F3E5F5" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/buttonCreate"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#656565"
+            android:backgroundTint="@color/purple"
             android:text="@string/buttonZam"
-            android:textColor="#F3E5F5" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
